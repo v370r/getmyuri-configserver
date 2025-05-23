@@ -2,6 +2,9 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: config-server
+
   cloud:
     config:
       server:
@@ -11,8 +14,10 @@ spring:
           clone-on-start: true
           search-paths:
             - config
-  application:
-    name: config-server
+    loadbalancer:
+      retry:
+        enabled: true  # Optional: allows retrying discovery-based requests if using WebClient or Feign
+
 management:
   endpoints:
     web:

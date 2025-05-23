@@ -2,5 +2,5 @@ spring:
   application:
     name: config-server
 
-  config:
-    import: "optional:configserver:"
+  # config:
+  #   import: "optional:configserver:"
